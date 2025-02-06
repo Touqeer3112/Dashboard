@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   
+    <div id="signup-form" class="form-container">
+        <h2>Signup</h2>
+        <input type="text" id="signup-name" placeholder="Enter Name" />
+        <input type="email" id="signup-email" placeholder="Enter Email" />
+        <input type="password" id="signup-password" placeholder="Enter Password" />
+        <button onclick="signup()">Signup</button>
+    </div>
+
+   
+    <div id="login-form" class="form-container" style="display: none;">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Enter Email" />
+        <input type="password" id="login-password" placeholder="Enter Password" />
+        <button onclick="login()">Login</button>
+    </div>
+
+ 
+    <div id="dashboard" class="main-content" style="display: none;">
+     
+        <div class="sidebar">
+            <div class="logo"></div>
+            <ul class="menu">
+                <li class="active">
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li><a href="profile.html"><i class="fa-solid fa-user"></i><span>Profile</span></a></li>
+                <li><a href="careers.html"><i class="fa-solid fa-briefcase"></i><span>Careers</span></a></li>
+                <li><a href="faq.html"><i class="fa-solid fa-circle-question"></i><span>FQS</span></a></li>
+                <li><a href="settings.html"><i class="fa-solid fa-gear"></i><span>Setting</span></a></li>
+                <li><a href="logout.html"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="header-wrapper">
+                <div class="header-title">
+                    <span>Simple</span>
+                    <h2>Dashboard</h2>
+                </div>
+                <div class="user-info">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Search">
+                    </div>
+                    <div class="profile-pic">
+                        <img src="./MT logo.jpg" alt="User Picture" />
+                    </div>
+                </div>
+            </div>
+
+            <h3>Recent Users</h3>
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                    </tr>
+                </thead>
+                <tbody id="user-table-body">
+                </tbody>
+            </table>
+            <button  class="btn"  onclick="clearUserData()" >
+                Clear Data
+            </button>
+        </div>
+       
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sidebar">
+    <div class="logo"></div>
+    <ul class="menu">
+        <li class="active">
+            <a href="#">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-user"></i>
+                <span>Porfile</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-briefcase"></i>
+                <span>Careers</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>FQS</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-gear"></i>
+                <span>Setting</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>logout</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="main-content">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <span>Simple</span>
+            <h2>Dashboard</h2>
+        </div>
+      
+        <div class="user-info">
+            <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search">
+            </div>
+            <img src="./My pic.jpg" alt="">
+        </div>
+    </div>
+</div>
+
+
+    <h3>Recent Users</h3>
+    <table class="user-table">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+            <tr>
+                <td>1</td>
+                <td>John Doe</td>
+                <td>johndoe@example.com</td>
+                <td>*****</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>janesmith@example.com</td>
+                <td>*****</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Mike Johnson</td>
+                <td>mikej@example.com</td>
+                <td>*****</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Emily Davis</td>
+                <td>emilydavis@example.com</td>
+                <td>*****</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Chris Brown</td>
+                <td>chrisbrown@example.com</td>
+                <td>*****</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Alice Williams</td>
+                <td>alicew@example.com</td>
+                <td>*****</td>
+            </tr>
+        </tbody>
+    </table>
+</section> 
+
+
+</div>
+</div>
+  
+
+
+
+
+
+<script src="app.js"></script>
+
+</body>
+</html> -->
+
+<!-- <div class="card-container">
+    <h3 class="main-title">Today'sdata</h3>
+    <div class="card-wrapper">
+        <div class="payment-card">
+        <div class="card-header">
+            <div class="amount">
+                <span class="title">
+                   Lorem ipsum dolor
+                </span>
+                <span class="amount-values">
+                    0000   
+                </span>
+                </div>
+                <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <span class="card-detail">
+                    **** **** ****
+                </span>
+                
+            </div>
+
+
+<div class="payment-card light-red">
+<div class="card-header">
+    <div class="amount">
+    <span class="title">
+    Lorem ipsum dolor
+    </span>
+<span class="amount-values">
+     0000   
+</span>
+</div>
+<i class="fa-solid fa-file-lines"></i>
+</div>
+<span class="card-detail">
+     **** **** ****
+</span>
+</div>
+
+
+<div class="payment-card light-purple">
+    <div class="card-header">
+        <div class="amount">
+            <span class="title">
+                Lorem ipsum dolor
+         </span>
+    <span class="amount-values">
+         0000   
+    </span>
+    </div> 
+    <i class="fa-solid fa-location-dot"></i>
+    </div>
+<span class="card-detail">
+     **** **** ****
+    </span>
+    </div>
+
+                                 
+        </div>
+        </div> -->
+ 
+
+
+
+
+
+
+
+
